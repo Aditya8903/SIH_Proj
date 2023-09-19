@@ -2,8 +2,14 @@ import React from 'react';
 import logo from "../assets/Logo.svg";
 import { Link } from 'react-router-dom';
 import '../App.css';
+import toast from 'react-hot-toast';
 
-const Navbar = () => {
+const Navbar = (props) => {
+  // const navigate = useNavigate();
+
+  const isLoggedIn = props.isLoggedIn;
+  const setIsLoggedIn = props.setIsLoggedIn;
+
   return (
     <div className='flex justify-between items-center w-11/12 max-w-[1160px] py-4 mx-auto'>
       <Link to="/"><img src={logo} alt="logo" width={160} height={32} loading='lazy'/></Link>
@@ -20,24 +26,41 @@ const Navbar = () => {
             <Link to="/contact">Contact</Link>
           </li>
           <li>
-            <Link to="/plansAndpricing">Our Plans</Link>
+            <Link to="/PlansAndPricing">Our Plans</Link>
+          </li>
+          <li>
+            <Link to="/HowItWorks">How It Works</Link>
           </li>
         </ul>
       </nav>
 
       {/* buttons */}
       <div className='flex items-center gap-x-4 text-richblack-100'>
-        <Link to="/login">
-          <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Login</button>
-        </Link>
-        <Link to="/signup">
-          <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Sign Up</button>
-        </Link>
-        <Link to="/logout">
-          <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Log out</button>
-        </Link>
-        <Link to="/dashboard">
-          <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Dashboard</button>
+        { !isLoggedIn &&
+          <Link to="/login">
+            <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Login</button>
+          </Link>
+        }
+        { !isLoggedIn &&
+          <Link to="/signup">
+            <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Sign Up</button>
+          </Link>
+        }
+        { isLoggedIn &&
+          <Link to="/logout">
+            <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700' onClick={()=>{
+              setIsLoggedIn(false);
+              toast.success("Logged Out");
+            }}>Log out</button>
+          </Link>
+        }
+        { isLoggedIn &&
+          <Link to="/dashboard">
+            <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Dashboard</button>
+          </Link>
+        }
+        <Link to="/FreeTrial">
+          <button className='bg-richblack-800 py-[8px] px-[12px] rounded-[8px] border border-richblack-700'>Free Trial</button>
         </Link>
       </div>
     </div>

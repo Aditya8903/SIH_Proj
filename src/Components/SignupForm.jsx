@@ -14,7 +14,8 @@ const SignupForm = ({ setIsLoggedIn }) => {
     confirmPassword: '',
   });
 
-  const [showPass, setShowPass] = useState(false);
+  const [showPass1, setShowPass1] = useState(false);
+  const [showPass2, setShowPass2] = useState(false);
 
   function changeHandler(event) {
     setFormData((prevData) => ({
@@ -96,7 +97,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
             </p>
             <input
               required
-              type={showPass ? 'text' : 'password'}
+              type={showPass1 ? 'text' : 'password'}
               name="password"
               onChange={changeHandler}
               placeholder="Enter your Password"
@@ -104,10 +105,10 @@ const SignupForm = ({ setIsLoggedIn }) => {
               className="bg-richblack-800 rounded-[0.75rem] p-[12px] text-richblack-5"
             />
             <span
-              onClick={() => setShowPass((prev) => !prev)}
+              onClick={() => setShowPass1((prev) => !prev)}
               className="absolute right-3 top-[70%] transform -translate-y-1/2 cursor-pointer z-10"
             >
-              {showPass ? (
+              {showPass1 ? (
                 <AiOutlineEye fontSize={24} fill="#AFB2BF" />
               ) : (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />
@@ -122,7 +123,7 @@ const SignupForm = ({ setIsLoggedIn }) => {
             </p>
             <input
               required
-              type={showPass ? 'text' : 'password'}
+              type={showPass2 ? 'text' : 'password'}
               name="confirmPassword"
               onChange={changeHandler}
               placeholder="Confirm Password"
@@ -130,10 +131,10 @@ const SignupForm = ({ setIsLoggedIn }) => {
               className="bg-richblack-800 rounded-[0.75rem] w-full p-[12px] text-richblack-5"
             />
             <span
-              onClick={() => setShowPass((prev) => !prev)}
+              onClick={() => setShowPass2((prev) => !prev)}
               className="absolute right-3 top-[70%] transform -translate-y-1/2 cursor-pointer z-10"
             >
-              {showPass ? (
+              {showPass2 ? (
                 <AiOutlineEye fontSize={24} fill="#AFB2BF" />
               ) : (
                 <AiOutlineEyeInvisible fontSize={24} fill="#AFB2BF" />

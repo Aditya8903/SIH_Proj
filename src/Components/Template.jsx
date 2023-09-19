@@ -47,3 +47,4 @@ const Template = ({title,desc1,desc2,image,formmtype,setIsLoggedIn}) => {
 }
 
 export default Template
+
