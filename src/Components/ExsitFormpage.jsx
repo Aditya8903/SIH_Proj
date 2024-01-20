@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import toast from 'react-hot-toast';
 import { useNavigate } from 'react-router-dom';
-const NewCertificate = () => {
+const ExsitFormpage = () => {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     firstName: '',
@@ -26,7 +26,7 @@ const NewCertificate = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex items-center justify-center ">
       {/* <div className=" w-full p-6 bg-white rounded shadow-md"> */}
     <div className="max-w-lg w-full p-6 bg-white rounded shadow-md">
         <h1 className="text-2xl font-bold mb-4">Certificate Form</h1>
@@ -59,7 +59,6 @@ const NewCertificate = () => {
                 />
               </div>
             </div>
-            {/* ... (rest of the fields) */}
           </fieldset>
           <fieldset className="border p-4 rounded mb-4">
           <legend className="text-lg font-semibold">Certificate Details</legend>
@@ -87,30 +86,7 @@ const NewCertificate = () => {
             />
           </div>
           
-          <div className="flex flex-wrap -mx-3 mb-4">
-              <div className="w-full md:w-1/2 px-3 mb-4">
-            <label htmlFor="assignedDate" className="block text-gray-600">Assigned Date:</label>
-            <input
-              type="date"
-              id="assignedDate"
-              name="assignedDate"
-              value={formData.assignedDate}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded shadow-md focus:outline-none focus:ring focus:border-blue-300"
-            />
-          </div>
-          <div className="w-full md:w-1/2 px-3 mb-4">
-            <label htmlFor="duration" className="block text-gray-600">Duration (in years):</label>
-            <input
-              type="number"
-              id="duration"
-              name="duration"
-              value={formData.duration}
-              onChange={handleChange}
-              className="w-full px-3 py-2 border rounded shadow-md focus:outline-none focus:ring focus:border-blue-300"
-            />
-          </div>
-          </div>
+          
           <div className="mb-4">
             <label htmlFor="email" className="block text-gray-600">Email:</label>
             <input
@@ -138,4 +114,4 @@ const NewCertificate = () => {
   );
 };
 
-export default NewCertificate;
+export default ExsitFormpage;

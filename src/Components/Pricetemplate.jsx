@@ -2,7 +2,7 @@ import React from 'react';
 
 const Pricetemplate = ({ packages, desc, rate, features }) => {
   return (
-    <div className="border border-solid border-secondary rounded p-4 shadow-lg flex flex-col items-center">
+    <div className="border border-solid border-secondary rounded p-4 shadow-md hover:shadow-lg hover:scale-110 transition flex flex-col items-center ">
       {/* Package */}
       <h1 className="text-3xl font-bold text-headline mb-2">{packages}</h1>
 <p className="text-paragraph mb-4">{desc}</p>
@@ -17,7 +17,7 @@ const Pricetemplate = ({ packages, desc, rate, features }) => {
           </li>
         ))}
       </ul>
-      <button className="bg-button hover:bg-tertiary text-white font-semibold py-2 px-4 rounded">
+      <button className="bg-green-500 bg-button hover:bg-tertiary text-white font-semibold py-2 px-4 rounded mb-4 mt-auto">
   Details
 </button>
     </div>

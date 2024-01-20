@@ -14,12 +14,18 @@ import ExsistingCertificate from './Components/ExsistingCertificate';
 import Footer from './Components/footer';
 import VerifyCertificate from './Components/VerifyCertificate';
 import FreeTrial from './Components/FreeTrial';
+import FreeTrialForm from './Components/FreeTrialForm';
+import ContactUs from './Components/ContactUs';
+import ComplaintForm from './Components/ComplaintForm';
+import About from './Components/About';
+import FeedbackForm from './Components/FeedbackForm';
+import VerifyForm from './Components/VerifyForm';
 const App = () => {
 
   const[isLoggedIn,setIsLoggedIn] = useState(false);
 
   return (
-    <div className='w-screen  bg-richblack-900 flex flex-col '>
+    <div className='w-screen  flex flex-col '>
       <Navbar isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
@@ -32,6 +38,12 @@ const App = () => {
         <Route path="/NewCertificate" element={<NewCertificate />} />
         <Route path="/VerifyCertificate" element={<VerifyCertificate />} />
         <Route path="/FreeTrial" element={<FreeTrial />} />
+        <Route path="/FreeTrialForm" element={<FreeTrialForm />} />
+        <Route path="/contact" element={<ContactUs />} />
+        <Route path="/ComplaintForm" element={<ComplaintForm />} />
+        <Route path="/FeedbackForm" element={<FeedbackForm />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/verify" element={<VerifyForm />} />
       </Routes>
       <footer>
       <Footer/>

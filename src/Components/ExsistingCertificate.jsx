@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ExsitFormpage from './ExsitFormpage';
 
 const ExistingCertificate = () => {
   const [selectedFiles, setSelectedFiles] = useState([]);
@@ -22,7 +23,8 @@ const ExistingCertificate = () => {
   };
 
   return (
-    <div className="w-1/2 h-1/2 mx-auto p-6 border rounded-lg shadow-md mt-20 bg-white flex flex-col items-center justify-center">
+    <div className='h-screen flex p-4 mx-auto'>
+      <div className="w-1/2 h-1/2 mx-4  p-6 border rounded-lg shadow-lg my-auto bg-white flex flex-col items-center justify-center border-gray-600 ">
       <h1 className="text-2xl font-bold mb-4">Upload File</h1>
       <div
         className={`border-dashed border-2  border-gray-300 rounded-lg p-4 ${
@@ -72,6 +74,8 @@ const ExistingCertificate = () => {
           </p>
         </div>
       )}
+    </div>
+    <ExsitFormpage/>
     </div>
   );
 };

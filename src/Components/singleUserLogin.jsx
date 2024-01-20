@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import loginImg from "../assets/login.avif";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai"; // Corrected import
 import toast from 'react-hot-toast';
 import { Link, useNavigate } from 'react-router-dom';
+import Template from './Template';
 
-const LoginForm = ({setIsLoggedIn}) => {
+function SingleUserLogin({ setIsLoggedIn }) {
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
@@ -27,6 +29,13 @@ const LoginForm = ({setIsLoggedIn}) => {
   }
 
   return (
+    <div>
+        <Template
+         title="Welcome Back"
+         image={loginImg}
+         formmtype={"login"}
+         setIsLoggedIn={setIsLoggedIn}
+      />
     <form onSubmit={submitHandler}
     className="flex flex-col w-full gap-y-4 mt-6">
       <label className="w-full">
@@ -69,7 +78,8 @@ const LoginForm = ({setIsLoggedIn}) => {
         Sign In
       </button>
     </form>
+    </div>
   );
 };
 
-export default LoginForm;
+export default SingleUserLogin;
